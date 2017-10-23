@@ -60,7 +60,7 @@ def blog():
     
 	#this is all key to making this all tie in properly
 	elif request.args.get('user'):
-		# should substitute owner_id for the user_id variable
+		#user_id key for the filtering
 		user_id = request.args.get('user')
 		entries = Blog.query.filter_by(user_id=user_id).all()
 		
@@ -95,13 +95,13 @@ def newpost():
 		db.session.add(post)
 		db.session.commit()
 
-		flash("New post created")
+		flash("new post created")
 		
 		id = str(post.id)
 		
 		return redirect("/blog?id=" + id)
 	
-	return render_template("newpost.html", title="New Post")
+	return render_template("newpost.html", title="new post")
 
 
 #  Now going into user sign-up (check details)etc to tie all this together, check exact wording of demo app on flash errors
