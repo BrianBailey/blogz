@@ -80,10 +80,10 @@ def newpost():
 	if request.method == 'POST':
 		if not request.form['title'] or not request.form['body']:
 			if not request.form['title']:
-				flash("*'Title for new blog' text area cannot be blank.")
+				flash("*'Title for new post' text area cannot be blank.")
 			if not request.form['body']:
-				flash("*'Your new blog' text area can't be empty")
-			return render_template("newpost.html", title="New Post")
+				flash("*'Your new post' text area can't be empty")
+			return render_template("newpost.html", title="new post")
 		
 		blog_title = request.form['title']
 		blog_body = request.form['body']
