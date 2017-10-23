@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<p><b><h1>new post</h1><b></p>
+	<form method="post">
+		<table style="margin-top: 50px">
+			<tr>
+				<td>
+				<label for="title"><b><h4>title</h4></b></label>
+				</td>
+				<td>
+					<input type="text" name="title" size="50" maxlength="50" value="{{request.form['title']}}" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td valign="top">
+				<label for="body"><b><h4>post</h4></b></label><br>
+				</td>
+				<td>
+					<textarea rows="5" cols="50" maxlength="255" name="body">{{request.form['body']}}</textarea>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+				<b><h4><input style="float: left;" type="submit" value="Submit" /></h4></b>
+				</td>
+			</tr>
+		</table>
+	</form>
+{% endblock %}

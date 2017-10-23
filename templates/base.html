@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>{{title}}</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css"  integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+	<style>
+            .error {
+                color: red;
+            }
+        </style>    
+</head>
+	<body>
+        
+		<div class="jumbotron">
+		  <div class="container">
+		  <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+          <div class="navbar-header">
+		 
+		  
+		  <a href="/" class="btn btn-info" role="button">home</a>
+		  
+		  <a href="/blog" class="btn btn-info" role="button">all posts</a>
+		  <a href="/newpost" class="btn btn-info" role="button">new post</a>
+		  
+		  <a href="/login" class="btn btn-info" role="button">login</a>
+		  <a href="/logout" class="btn btn-info" role="button">logout</a>
+		  
+				   
+		   </div>
+			  
+		  </div>
+		</div> 
+			
+			
+		
+		<br>
+		<br>
+		
+
+		<div class="bottom">
+			{% with messages = get_flashed_messages() %}
+				{% for message in messages %}
+				<p><h6><font color="red">{{message}}</font></h6></p>
+				{% endfor %}
+			{% endwith %}
+			
+			{% block content %}
+			{% endblock %}
+		</div>
+		<br><br>
+		
+			<br><br>
+
+
+		 <div id="copyright" class="footer bordereffect">
+			<p>&copy; 2017 BDB Blogging Analytics--  Brian Bailey</p>
+			<a href="#BDBailey, Eureka, Mo ">Click for contact information</a>
+	     </div>
+
+	</body>
+</html>

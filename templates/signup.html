@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+	{% block content %}
+	<h1>{{title}}</h1>	
+	<form method="post">
+		<table style="margin-top: 30px">
+			<tr>
+				<td>
+					<label for="username">Username</label>
+				</td>
+				<td>
+					<input name="username" type="text" size="40" maxlength="24" value="{{request.form['username']}}" />	
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="password">Password:</label>
+				</td>
+				<td>
+					<input name="password" type="password" size="40" maxlength="24"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="verify">Verify Password</label>
+				</td>
+				<td>
+					<input name="verify" type="password" size="40" maxlength="24"/>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<h4><input style="float: left;" type="submit" value="Submit" /></h4>
+				</td>
+			</tr>
+		</table>
+	</form>
+	{% endblock %}
