@@ -14,8 +14,8 @@ class Blog(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	title = db.Column(db.String(100))
 	body = db.Column(db.String(500))
-	# create user_id or should be owner_id
-	owner_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+	# create owner_id/user_id
+	user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 	
 	# from get it done app
 	def __init__(self, title, body, user):
@@ -65,7 +65,7 @@ def blog():
 		entries = Blog.query.filter_by(user_id=user_id).all()
 		
 		
-		return render_template("blog.html", entries=entries, title="Posts by " + owner_id)
+		return render_template("blog.html", entries=entries, title="Posts by " + user_id)
 	
 	else:
 		# same as build a blog but with entries, title
