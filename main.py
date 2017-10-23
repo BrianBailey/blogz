@@ -149,7 +149,7 @@ def signup():
 	
 	return render_template("signup.html", title="Signup")
 		
-## login GET and POST routes
+# login GET and POST routes
 @app.route("/login", methods=['GET','POST'])
 def login():
 	if request.method == 'POST':
@@ -189,7 +189,7 @@ def logout():
 @app.route("/")
 def index():
 	users = User.query.all()
-	# user_index.html should be index.html 
+	# index.html 
 	return render_template("index.html", users=users, title="blog users!")
 
 
